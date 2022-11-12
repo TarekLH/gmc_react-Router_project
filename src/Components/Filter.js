@@ -11,12 +11,12 @@ export function Filter() {
     }
 
 
-    let dataSearch = MovieList.filter( movie => {
+    {/*let dataSearch = MovieList.filter( movie => {
         movie.title.toLowerCase().includes(titleFilter.toLowerCase())
-        {/*Object.keys(movie).some(key => 
+        Object.keys(movie).some(key => 
             movie[key].toString().toLowerCase().includes(titleFilter.toString().toLowerCase())
-        )*/}
-    })
+        )
+    })*/}
 
     console.log(titleFilter)
     return (

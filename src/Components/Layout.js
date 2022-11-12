@@ -5,10 +5,10 @@ import Navbar from "./Navbar";
 
 //Pages
 import MovieCard from "./MovieCard";
-import DescPage from "./DescPage"
+import DescPage from "../Pages/DescPage";
 
 //React Router
-import { Routes, Route, Link, Navigate, Outlet } from "react-router-dom";
+import { Routes, Route, Link, Navigate, Outlet, useLocation } from "react-router-dom";
 
 
 function Main() {
@@ -23,14 +23,17 @@ function Main() {
 }
 
 export default function Layout() {
+
+    const location = useLocation();
+
     return (
         <>
             
 
             <Routes>
                 <Route path="main" element={<Main/>} >
-                    <Route path="home" element={<MovieCard/>} />
-                    <Route path="desc" element={<DescPage/>} />
+                    <Route path="home" exact element={<MovieCard/>} />
+                    <Route path="home/:id" element={<DescPage movieId={location.state}/>} />
                 </Route>
                 <Route
                     path="*"

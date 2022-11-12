@@ -1,12 +1,20 @@
 import React from "react"
 import {MovieList} from "./MovieList"
 import { dataSearch } from "./Filter"
+import { Link } from "react-router-dom"
 
 
 const movieDisplay = MovieList.map(movie => (
     <div className="col">
         <div key={movie.id} className="card shadow-sm w-75">
-            <img src={movie.img} className="bd-placeholder-img card-img-top" width="100%" height="380" alt="img" />
+
+            <Link 
+                to={{ pathname: `/main/home/${movie.movie_id}`}}
+                state={movie.movie_id}
+            >
+                <img src={movie.img} className="bd-placeholder-img card-img-top" width="100%" height="380" alt="img" />
+            </Link>
+
             <div className="card-body">
                 <div className="d-flex justify-content-between align-items-center">
                     <div>
