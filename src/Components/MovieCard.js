@@ -1,11 +1,10 @@
 import React from "react"
-import {MovieList} from "./MovieList"
 import { Link } from "react-router-dom"
 
 
-export default function MovieCard(props) {
+export default function MovieCard({dataSearch, MovieList}) {
 
-    const filteredMovies = props.dataSearch.map(movie => (
+    const filteredMovies = dataSearch.map(movie => (
         <div className="col">
             <div key={movie.id} className="card shadow-sm w-75">
 
@@ -60,7 +59,7 @@ export default function MovieCard(props) {
             <div className="album py-5 bg-light">
                 <div className="container">
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        {props.dataSearch.length === 0 ? movieDisplay : filteredMovies} 
+                        {dataSearch.length === 0 ? movieDisplay : filteredMovies} 
                     </div>
                 </div>
             </div>

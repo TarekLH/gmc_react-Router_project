@@ -1,12 +1,7 @@
 import React from "react";
 
 
-
-export default function Filter(props) {
-
-    const handleTitleSearch = (event) => {
-        props.setFilter(event.target.value)
-    }
+export default function Filter({titleFilter, handleTitleSearch, handleAddClick}) {
 
     return (
         <>
@@ -24,14 +19,20 @@ export default function Filter(props) {
                             <input 
                                 type="search" 
                                 className="form-control form-control-dark text-bg-dark" 
-                                placeholder="Search..." 
+                                placeholder="Search Title/Rate..." 
                                 aria-label="Search"
-                                value={props.titleFilter}
-                                onChange={handleTitleSearch.bind(this)}
+                                value={titleFilter}
+                                onChange={handleTitleSearch}
                             />
                         </form>
                         <div className="text-end">
-                            <button type="button" className="btn btn-warning">Add Movie</button>
+                            <button 
+                                onClick={handleAddClick} 
+                                type="button" 
+                                className="btn btn-warning"
+                            >
+                                Add Movie
+                            </button>
                         </div>
                     </div>
                 </div>
