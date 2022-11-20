@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 
-export default function MovieCard({dataSearch, MovieList}) {
+export default function MovieCard({dataSearch, movies}) {
 
     const filteredMovies = dataSearch.map(movie => (
         <div className="col">
@@ -20,7 +20,7 @@ export default function MovieCard({dataSearch, MovieList}) {
                         <div>
                             <h5 className="mb-0">{movie.title}</h5>
                         </div>
-                        <small className="mx-3">{movie.rate}</small>
+                        <small className="mx-3">{movie.rate}/5</small>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@ export default function MovieCard({dataSearch, MovieList}) {
     ))
 
 
-    const movieDisplay = MovieList.map(movie => (
+    const movieDisplay = movies.map(movie => (
         <div className="col">
             <div key={movie.id} className="card shadow-sm w-75">
 
@@ -44,7 +44,7 @@ export default function MovieCard({dataSearch, MovieList}) {
                         <div>
                             <h5 className="mb-0">{movie.title}</h5>
                         </div>
-                        <small className="mx-3">{movie.rate}</small>
+                        <small className="mx-3">{movie.rate}/5</small>
                     </div>
                 </div>
             </div>

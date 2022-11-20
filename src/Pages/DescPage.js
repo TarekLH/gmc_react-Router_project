@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 
-export default function DescPage({MovieList, movieId}) {
+export default function DescPage({movies, movieId}) {
 
     const linkStyle = {
         color: 'inherit', 
@@ -10,11 +10,11 @@ export default function DescPage({MovieList, movieId}) {
 
     return (
         <>
-            {MovieList.filter(movie => movieId === movie.movie_id ).map( movie => (
+            {movies.filter(movie => movieId === movie.movie_id ).map( movie => (
                     <div key={movie.movie_id} className="container col-xxl-8 px-4 py-5">
                         <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
                             <div className="col-10 col-sm-8 col-lg-6">
-                                <iframe width="600" height="400" src={movie.vidLink} title={movie.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen></iframe>
+                                <iframe style={{borderRadius: 15}} width="600" height="400" src={movie.vidLink} title={movie.title} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen></iframe>
                             </div>
                             <div className="col-lg-6">
                                 <h1 className="display-5 fw-bold lh-1 mb-3">{movie.title}</h1>
